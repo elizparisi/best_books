@@ -16,7 +16,8 @@ class CLI
   end
   
   def book_list
-    Book.all.each_with_index(1) do |book, i|
+    @books = Book.all
+    @books.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title}"
     end
   end
