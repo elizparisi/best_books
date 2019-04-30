@@ -4,7 +4,7 @@ class Book
   @@all = []
   
   def self.all
-    @all
+    @@all
   end
   
   def save
