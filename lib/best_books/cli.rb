@@ -29,17 +29,17 @@ class CLI
     input = nil 
     
     while input != "exit"
-      puts "Enter a number 1-200 that corresponds with the book you'd like more info on, type list to see the list of books again, or type exit to leave:".cyan
+      puts "Enter a number 1-200 that corresponds with the book you'd like more info on, type list to see the list of books again, or type exit to leave:".green
       
       input = gets.strip.downcase
       
       # if the input is greater than 0 and less than or equal to 200 
       if input.to_i > 0 && input.to_i <= @books.count
-      the_list = @books[input.to_i-1]
+      list = @books[input.to_i-1]
         puts ""
-        puts "#{the_list.title}, by #{the_list.author}".blue
-        puts "Rating: #{the_list.rating}".light_blue
-        puts "Find out more here: #{the_list.url}".light_blue
+        puts "#{list.title}, by #{list.author}".blue
+        puts "Rating: #{list.rating}".light_blue
+        puts "Find out more here: #{list.url}".light_blue
       
       elsif input == "list"
         book_list
