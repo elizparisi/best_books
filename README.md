@@ -1,8 +1,6 @@
 # BestBooks
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_books`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Best Books! This Ruby gem provides the user with a list of the Top 200 books published this year that people have added on the website Goodreads. You can browse book titles and see more info including author, rating and the book url. Information is pulled from "https://www.goodreads.com/book/popular_by_date/2019".
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Running ./bin/best_books will start the program. A menu is provided after the list of books.
 
 ## Development
 
