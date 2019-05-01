@@ -3,6 +3,7 @@ require_relative "./best_books/version"
 
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module BestBooks
   class Error < StandardError; end

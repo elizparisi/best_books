@@ -7,7 +7,7 @@ class Scraper
       book = Book.new 
       book.title = book_css.css("a.bookTitle span").text.strip
       book.author = book_css.css("a.authorName").text.strip
-      book.url = book_css.css("a.bookTitle").attribute("href").value
+      book.url = "https://www.goodreads.com#{book_css.css("a.bookTitle").attribute("href").value}"
       book.rating = book_css.css("span.minirating").text.gsub("\u2014",",").strip
       book.save
     end
