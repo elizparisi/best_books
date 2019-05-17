@@ -1,4 +1,4 @@
-class Book
+class BestBooks::Book
   
   attr_accessor :title, :author, :url, :rating
   @@all = []

@@ -1,4 +1,4 @@
-class CLI 
+class BestBooks::CLI 
   
   def call 
     puts ""
@@ -10,7 +10,7 @@ class CLI
     puts ""
     puts "Here are the best books of 2019!".cyan
     puts ""
-    Scraper.scrape_page
+    BestBooks::Scraper.scrape_page
     book_list
     puts ""
     puts ""
@@ -19,7 +19,7 @@ class CLI
   end
   
   def book_list
-    @books = Book.all
+    @books = BestBooks::Book.all
     @books.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title}"
     end

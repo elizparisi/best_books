@@ -2,4 +2,4 @@
 
 require './lib/best_books'
 
-CLI.new.call
+BestBooks::CLI.new.call
