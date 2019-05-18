@@ -10,4 +10,9 @@ class BestBooks::Book
   def save
     @@all << self
   end
+  
+  #homework- add find_by_author method
+  def self.find_by_author(author)
+    self.select { |book| book.author == author}
+  end
 end
