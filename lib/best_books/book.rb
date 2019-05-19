@@ -12,7 +12,7 @@ class BestBooks::Book
   end
   
   #homework- add find_by_author method
-  def self.find_by_author(author)
-    self.select { |book| book.author == author}
+  def self.find_by_author(author=nil)     
+    @@all.select { |b| b.author == author}   
   end
 end
