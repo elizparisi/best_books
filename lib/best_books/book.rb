@@ -11,8 +11,8 @@ class BestBooks::Book
     @@all << self
   end
   
-  #homework- add find_by_author method
-  def self.find_by_author(author=nil)     
+  #this method should return an array of books by author name passed in
+  def self.find_by_author(author)     
     @@all.select { |b| b.author == author}   
   end
 end
