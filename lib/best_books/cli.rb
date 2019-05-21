@@ -36,10 +36,7 @@ class BestBooks::CLI
       # if the input is greater than 0 and less than or equal to 200 
       if input.to_i > 0 && input.to_i <= @books.count
       list = @books[input.to_i-1]
-        puts ""
-        puts "#{list.title}, by #{list.author}".blue
-        puts "Rating: #{list.rating}".light_blue
-        puts "Find out more here: #{list.url}".light_blue
+        display_book(list)
       
       elsif input == "list"
         book_list
@@ -47,12 +44,27 @@ class BestBooks::CLI
       elsif input == "search"
         puts "Which author do you want books for? Enter the name here:".yellow
         input = gets.strip.downcase
-        choice = BestBooks::Book.find_by_author(input)
+        result = BestBooks::Book.find_by_author(input)
+         result.each {|book| display_book(book)}
+         
+        if result == []
+          puts "I'm sorry, there is no match for that author. Please try again.".red
+          
+        else 
+          display_book(list)
+        end
         
       else 
         puts "I don't understand, please try again. Enter a number 1-200 for more information on a book, or type exit to leave.".red
       end
     end
+  end
+  
+  def display_book(list)
+    puts ""
+    puts "#{list.title}, by #{list.author}".blue
+    puts "Rating: #{list.rating}".light_blue
+    puts "Find out more here: #{list.url}".light_blue
   end
   
   def goodbye 

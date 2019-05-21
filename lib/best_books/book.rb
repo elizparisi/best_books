@@ -13,6 +13,6 @@ class BestBooks::Book
   
   #this method should return an array of books by author name passed in
   def self.find_by_author(author)     
-    @@all.select { |b| b.author == author}   
+    @@all.select { |b| b.author.downcase.include? author}   
   end
 end
