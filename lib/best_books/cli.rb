@@ -44,6 +44,11 @@ class BestBooks::CLI
       elsif input == "list"
         book_list
         
+      elsif input == "search"
+        puts "Which author do you want books for? Enter the name here:".yellow
+        input = gets.strip.downcase
+        choice = BestBooks::Book.find_by_author(input)
+        
       else 
         puts "I don't understand, please try again. Enter a number 1-200 for more information on a book, or type exit to leave.".red
       end
